@@ -55,7 +55,7 @@ if (-not $isAdmin)
     if ($null -eq (Get-Module -ListAvailable "PSReadLine")|?{$_.Version -eq "2.2.0"}) {Install-Module "PSReadLine" -Scope CurrentUser -AllowPrerelease -Force -MinimumVersion 2.2.0-beta3}
     if ($null -eq (Get-Module -ListAvailable "CompletionPredictor")) {Install-Module -Name CompletionPredictor -Repository PSGallery -Scope CurrentUser}
     if ($null -eq (Get-Module -ListAvailable "Terminal-Icons")) {Install-Module "Terminal-Icons" -Scope CurrentUser}
-    iwr https://gist.githubusercontent.com/Snozzberries/8fcaa22b90dae972e1b92cd27350667d/raw/21e62f60ccea981a8efb5c5ef5d9c364f7e34fc1/ohmyposhv3-v2.json -OutFile $env:TEMP\ohmyposh.json
+    iwr https://raw.githubusercontent.com/Snozzberries/Profiles/main/ohmyposh.json -OutFile $env:TEMP\ohmyposh.json
     oh-my-posh init pwsh -c $env:TEMP\ohmyposh.json|Invoke-Expression
     Import-Module -Name Terminal-Icons
     Import-Module -Name PSReadLine -MinimumVersion 2.2.0 -Force
