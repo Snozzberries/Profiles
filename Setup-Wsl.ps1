@@ -5,5 +5,5 @@ ln -s /mnt/c/Users/mike/OneDrive/Documents/Git/ /home/mike/git
 # Link PowerShell profile
 ln -s /mnt/c/Users/mike/OneDrive/Documents/PowerShell/Profile.ps1 /home/mike/.config/powershell/profile.ps1
 # Download config file to map fonts from Windows
-sudo wget -q https://gist.githubusercontent.com/Snozzberries/d88be5069916b3a0cc3741ea0687057e/raw/c22e22379c165839e426c50c610a00f5dd12e17a/local.conf -P /etc/fonts/
+sudo wget -q https://raw.githubusercontent.com/Snozzberries/Profiles/main/local.conf -P /etc/fonts/
 sudo apt install fontconfig
