@@ -42,22 +42,6 @@
           "type": "git"
         },
         {
-          "type": "aws",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "#ffffff",
-          "background": "#d6662a",
-          "template": " {{ if .Profile }} \uE7AD {{.Profile}}{{if .Region}}@{{.Region}}{{end}} "
-        },
-        {
-          "type": "az",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "#ffffff",
-          "background": "#008ad7",
-          "template": "{{ if .HomeTenantID }} \uFD03 {{ .Name }} @ {{ .TenantID }}{{end}} "
-        },
-        {
           "background": "#ffff66",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
