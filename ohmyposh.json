@@ -47,7 +47,7 @@
           "powerline_symbol": "\uE0B0",
           "foreground": "#ffffff",
           "background": "#FFA400",
-          "template": " \uE7AD {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
+          "template": "{{ if .Profile }} \uE7AD {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
         },
         {
           "type": "az",
@@ -55,7 +55,7 @@
           "powerline_symbol": "\uE0B0",
           "foreground": "#000000",
           "background": "#9ec3f0",
-          "template": " \uFD03 {{ .Name }}{{ .TenantID }}{{end}}"
+          "template": "{{ if .TenantID }} \uFD03 {{ .Name }}{{ .TenantID }}{{end}}"
         },
         {
           "background": "#ffff66",
