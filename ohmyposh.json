@@ -55,7 +55,7 @@
           "powerline_symbol": "\uE0B0",
           "foreground": "#000000",
           "background": "#9ec3f0",
-          "template": " \uFD03 {{if .EnvironmentName }}"
+          "template": " \uFD03 {{ .Name }}"
         },
         {
           "background": "#ffff66",
