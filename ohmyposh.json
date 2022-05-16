@@ -42,15 +42,20 @@
           "type": "git"
         },
         {
-          "background": "#6CA35E",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "properties": {
-            "fetch_version": true
-          },
+          "type": "aws",
           "style": "powerline",
-          "template": " \ue70c {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} ",
-          "type": "dotnet"
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#FFA400",
+          "template": " \uE7AD {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
+        },
+        {
+          "type": "az",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#9ec3f0",
+          "template": " \uFD03 {{ .EnvironmentName }}"
         },
         {
           "background": "#ffff66",
