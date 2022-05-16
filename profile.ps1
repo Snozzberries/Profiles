@@ -46,13 +46,15 @@ if (-not $isAdmin)
         }
         if (-not ((& which oh-my-posh)|measure).Count -gt 0)
         {
+            Write-Error "Oh My Posh not installed, attempting install"
             sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
             sudo chmod +x /usr/local/bin/oh-my-posh
         }
         $env:TEMP = "/tmp"
     }
     Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-    if ($null -eq (Get-Module -ListAvailable "PSReadLine")|?{$_.Version -eq "2.2.0"}) {Install-Module "PSReadLine" -Scope CurrentUser -AllowPrerelease -Force -MinimumVersion 2.2.0-beta3}
+    if ($null -eq ((Get-Module -ListAvailable "PSReadLine")|?{$_.Version -eq "2.2.0"})) {Install-Module "PSReadLine" -Scope CurrentUser -AllowPrerelease -Force -MinimumVersion 2.2.0-beta3}
+    if (((Get-Module -ListAvailable "PSReadLine")|measure).Count -gt 1) {Write-Error "More than 1 version of PSReadLine module found. Remove-Module for all versions other than 2.2.0 or newer."}
     if ($null -eq (Get-Module -ListAvailable "CompletionPredictor")) {Install-Module -Name CompletionPredictor -Repository PSGallery -Scope CurrentUser}
     if ($null -eq (Get-Module -ListAvailable "Terminal-Icons")) {Install-Module "Terminal-Icons" -Scope CurrentUser}
     iwr https://raw.githubusercontent.com/Snozzberries/Profiles/main/ohmyposh.json -OutFile $env:TEMP\ohmyposh.json
