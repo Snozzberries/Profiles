@@ -46,16 +46,16 @@
           "style": "powerline",
           "powerline_symbol": "\uE0B0",
           "foreground": "#ffffff",
-          "background": "#FFA400",
-          "template": "{{ if .Profile }} \uE7AD {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
+          "background": "#d6662a",
+          "template": " {{ if .Profile }} \uE7AD {{.Profile}}{{if .Region}}@{{.Region}}{{end}} "
         },
         {
           "type": "az",
           "style": "powerline",
           "powerline_symbol": "\uE0B0",
-          "foreground": "#000000",
-          "background": "#9ec3f0",
-          "template": "{{ if .TenantID }} \uFD03 {{ .Name }} @ {{ .TenantID }}{{end}}"
+          "foreground": "#ffffff",
+          "background": "#008ad7",
+          "template": "{{ if .HomeTenantID }} \uFD03 {{ .Name }} @ {{ .TenantID }}{{end}} "
         },
         {
           "background": "#ffff66",
