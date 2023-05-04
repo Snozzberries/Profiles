@@ -53,14 +53,14 @@ if (-not $isAdmin)
         $env:TEMP = "/tmp"
     }
     Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-    if ($null -eq ((Get-Module -ListAvailable "PSReadLine")|?{$_.Version -eq "2.2.0"})) {Install-Module "PSReadLine" -Scope CurrentUser -AllowPrerelease -Force -MinimumVersion 2.2.0-beta3}
-    if (((Get-Module -ListAvailable "PSReadLine")|measure).Count -gt 1) {Write-Error "More than 1 version of PSReadLine module found. Remove-Module for all versions other than 2.2.0 or newer."}
+    #if ($null -eq ((Get-Module -ListAvailable "PSReadLine")|?{$_.Version -eq "2.2.0"})) {Install-Module "PSReadLine" -Scope CurrentUser -AllowPrerelease -Force -MinimumVersion 2.2.0-beta3}
+    #if (((Get-Module -ListAvailable "PSReadLine")|measure).Count -gt 1) {Write-Error "More than 1 version of PSReadLine module found. Remove-Module for all versions other than 2.2.0 or newer."}
     if ($null -eq (Get-Module -ListAvailable "CompletionPredictor")) {Install-Module -Name CompletionPredictor -Repository PSGallery -Scope CurrentUser}
     if ($null -eq (Get-Module -ListAvailable "Terminal-Icons")) {Install-Module "Terminal-Icons" -Scope CurrentUser}
     iwr https://raw.githubusercontent.com/Snozzberries/Profiles/main/ohmyposh.json -OutFile $env:TEMP\ohmyposh.json
     oh-my-posh init pwsh -c $env:TEMP\ohmyposh.json|Invoke-Expression
     Import-Module -Name Terminal-Icons
-    Import-Module -Name PSReadLine -MinimumVersion 2.2.0 -Force
+    #Import-Module -Name PSReadLine -MinimumVersion 2.2.0 -Force
     Import-Module -Name CompletionPredictor
     Set-PSReadLineOption -PredictionSource HistoryAndPlugin
     Set-PSReadLineOption -PredictionViewStyle ListView
